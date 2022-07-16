@@ -1,0 +1,35 @@
+<h3>Template Driven Forms Validation in Angular 13 Example</h3>
+
+<!--Template Validation-->
+<!-- <form #contactForm="ngForm" (ngSubmit)="submit(contactForm.value)">
+  
+  <div>
+    <label for="firstName">First Name</label>
+    <input type="text" required minlength="3" maxlength="10" ngModel name="firstName" #firstName="ngModel" id="firstName">
+    <div class="error" *ngIf="firstName.touched && firstName.invalid || firstName.untouched">
+      <div *ngIf="firstName.errors && firstName.errors['required']">First Name is required</div>
+      <div *ngIf="firstName.errors && firstName.errors['minlength']">First Name length is Minimum</div>
+      <div *ngIf="firstName.errors && firstName.errors['maxlength']">First Name lenght is Maximum</div>
+    </div>
+
+  </div>
+  <button type="submit" [class.disabled]="!contactForm.valid">submit</button>
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Name</label>
+    <input 
+          formControlName="name"
+          id="name"
+          type="text">
+    <div *ngIf="f['name'].touched && f['name'].invalid" class="error">
+      <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is Required</div>
+      <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should contain 3 character</div>
+      <div *ngIf="f['name'].errors && f['name'].errors['maxlength']">Name should not contain more than 10 character</div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+

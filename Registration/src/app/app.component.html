@@ -1,0 +1,20 @@
+<div>
+  UserName : <input type="text" [(ngModel)]="userName"><br>
+  Password : <input type="text" [(ngModel)]="pzd"><br>
+  confirmPassword : <input type="text" [(ngModel)]="confrimPzd"><br>
+  Gender :
+  <input type="radio" [(ngModel)]="gender" value="male">Male
+  <input type="radio" [(ngModel)]="gender" value="female">Female <br>
+
+  Country :
+    <select [(ngModel)]="country">
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="India">India</option>
+    </select> <br>
+
+  <input type="checkbox" [(ngModel)]="licenceAgreement"/> I Accept Licence Agreement <br>  
+  <input type="button" value="submit" (click)="register()">
+  
+  <div [innerHTML]="msg"></div>
+</div>

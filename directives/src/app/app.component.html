@@ -1,0 +1,30 @@
+<!-- <div>
+    <h1>Style Directive Example</h1>
+
+    <div [style.color]="mycolor">{{mycolor}}</div>
+</div> -->
+
+<!-- <div>
+    <h1>Style Directive Example</h1>
+
+    <div [ngClass]="myclass">{{marks}}</div>
+</div>  -->
+
+<div>
+    <h4>ngFor with Object Array Example</h4>
+    <table border="1">
+        <tr>
+            <th>Emp Id</th>
+            <th>Emp Name</th>
+            <th>Emp salary</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
